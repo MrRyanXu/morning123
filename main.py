@@ -19,10 +19,10 @@ template_id = os.environ["TEMPLATE_ID"]
 
 
 def get_weather():
-  url = "https://restapi.amap.com/v3/weather/weatherInfo?key=c9c1e939f7df92bf6afd62ea3f26116df&city="+city
+  url = "https://restapi.amap.com/v3/weather/weatherInfo?key=c9c1e939f7df92bf6afd62ea3f26116d&city="+city
   res = requests.get(url).json()
   weather = res['lives'][0]
-  return weather['weather'], math.floor(weather['temperature_float'])
+  return weather['weather'], weather['temperature_float']
 
 def get_count():
   delta = today - datetime.strptime(start_date, "%Y-%m-%d")
